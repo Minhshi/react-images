@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "../styles/app.css";
 import SearchBar from "./search_bar";
+import ImageList from "./image_list";
 
 const API_KEY = process.env.REACT_APP_UNSPLASH_API;
 
@@ -26,7 +27,7 @@ class App extends React.Component {
     return (
       <div className="ui-container">
         <SearchBar onSearchSubmit={this.onSearchSubmit} />
-        {this.state.images.length} images
+        <ImageList images={this.state.images} />
       </div>
     );
   }
